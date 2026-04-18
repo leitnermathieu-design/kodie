@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+@layer utilities {
+	.animate-slide-up-fade { animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+	.animate-slide-down-fade { animation: slideDownFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+	.animate-slide-left-fade { animation: slideLeftFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+	.animate-slide-right-fade { animation: slideRightFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+	.animate-crazy-bounce { animation: crazyBounce 0.8s cubic-bezier(0.28, 0.84, 0.42, 1) forwards; }
+	.animate-spin-pop { animation: spinPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+	.animate-wobble-roll { animation: wobbleRoll 0.8s ease-in-out forwards; }
+	.animate-jelly-pop { animation: jellyPop 0.9s both; }
+}
+
+@keyframes slideUpFade {
+	0% { transform: translateY(25px); opacity: 0; }
+	100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes slideDownFade {
+	0% { transform: translateY(-50px); opacity: 0; }
+	100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes slideLeftFade {
+	0% { transform: translateX(50px); opacity: 0; }
+	100% { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideRightFade {
+	0% { transform: translateX(-50px); opacity: 0; }
+	100% { transform: translateX(0); opacity: 1; }
+}
+@keyframes crazyBounce {
+	0% { transform: translateY(15px) scale(0.95); opacity: 0; }
+	50% { transform: translateY(-5px) scale(1.02); opacity: 1; }
+	80% { transform: translateY(3px) scale(0.98); }
+	100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+@keyframes spinPop {
+	0% { transform: scale(0.6) rotate(-45deg); opacity: 0; }
+	70% { transform: scale(1.08) rotate(5deg); opacity: 1; }
+	100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+@keyframes wobbleRoll {
+	0%, 100% { transform: rotate(0deg); }
+	25% { transform: rotate(-5deg); }
+	50% { transform: rotate(4deg); }
+	75% { transform: rotate(-2deg); }
+}
+@keyframes jellyPop {
+	0% { transform: scale3d(1, 1, 1); opacity: 0; }
+	30% { transform: scale3d(1.05, 0.95, 1); opacity: 1; }
+	40% { transform: scale3d(0.96, 1.04, 1); }
+	50% { transform: scale3d(1.02, 0.98, 1); }
+	65% { transform: scale3d(0.99, 1.01, 1); }
+	75% { transform: scale3d(1.01, 0.99, 1); }
+	100% { transform: scale3d(1, 1, 1); opacity: 1; }
+}
